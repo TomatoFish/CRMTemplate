@@ -1,0 +1,19 @@
+meta {
+  name: Update board
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/board/update
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "id": "ce731db5-47d2-49cc-86a6-11e6aa668844",
+    "name": "B1",
+    "title": "UpdatedTestBoard_1"
+  }
+}

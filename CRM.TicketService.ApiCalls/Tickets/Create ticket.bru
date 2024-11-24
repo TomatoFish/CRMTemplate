@@ -1,0 +1,20 @@
+meta {
+  name: Create ticket
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/ticket/create
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "B1T4",
+    "title": "Board 1. Test Ticket 4",
+    "description": "New test ticket description",
+    "boardId": "ce731db5-47d2-49cc-86a6-11e6aa668844"
+  }
+}

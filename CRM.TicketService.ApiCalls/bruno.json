@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "CRM.TicketService.ApiCalls",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

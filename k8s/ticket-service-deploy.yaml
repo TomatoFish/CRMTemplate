@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ticket-service-deploy
+  labels:
+    app: ticket-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ticket-service
+  template:
+    metadata:
+      name: ticket-service
+      labels:
+        app: ticket-service
+    spec:
+      containers:
+        - name: ticket-service
+          image: sadfield/crm_template.ticket_service:latest
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: theme-clusterip-srv
+spec:
+  type: ClusterIP
+  selector:
+    app: ticket-service
+  ports:
+    - name: ticket-service
+      protocol: TCP
+      port: 80
+      targetPort: 80
+---
+services:
+  db:
+    container_name: postgres
+    restart: always
+    ports:
+      - '5432:5432'
+    networks:
+      - ticket_db_network
+    environment:
+      - POSTGRES_USER=${POSTGRES_LOGIN:?database user not set}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:?database password not set}
+      - POSTGRES_DB=${POSTGRES_DB:?database name not set}
+    image: postgres:17.0-alpine
+    volumes:
+      - ticket_db_data:/var/lib/postgresql/data
+
+networks:
+  ticket_db_network:
+    driver: bridge
+
+volumes:
+  ticket_db_data:

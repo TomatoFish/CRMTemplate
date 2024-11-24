@@ -1,0 +1,20 @@
+meta {
+  name: Update ticket
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/ticket/update
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "id": "464ac20d-7f0d-4c60-95ee-4ce8dd60678a",
+    "name": "B1T1",
+    "title": "Board 1. Test Ticket 1",
+    "description": "Changed test ticket description"
+  }
+}

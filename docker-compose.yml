@@ -1,0 +1,42 @@
+﻿version: '3.8'
+services:
+  ticketservice.api:
+    container_name: ticket_service
+    restart: on-failure
+    ports:
+      - "8010:8080"
+      - "8011:8081"
+    image: ticketservice.api
+    build:
+      context: .
+      dockerfile: TicketService.Api/Dockerfile
+    networks:
+      - ticket_db_network
+    depends_on:
+      - ticket_db
+    environment:
+      - ConnectionStrings__DbContext=User Id=${POSTGRES_USER:?database user not set};Password=${POSTGRES_PASSWORD:?database password not set};Server=ticket_db;Port=5432;Database=${POSTGRES_DB:?database name not set};
+      - ASPNETCORE_URLS=http://+:8080
+      - ASPNETCORE_ENVIRONMENT=Production
+
+  ticket_db:
+    container_name: ticket_postgres_db
+    image: postgres:17.0-alpine
+    restart: on-failure
+    ports:
+      - "5431:5432"
+    networks:
+      - ticket_db_network
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER:?database user not set}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:?database password not set}
+      - POSTGRES_DB=${POSTGRES_DB:?database name not set}
+    volumes:
+      - ticket_db_data:/var/lib/postgresql/data
+
+networks:
+  ticket_db_network:
+    driver: bridge
+
+volumes:
+  ticket_db_data:
