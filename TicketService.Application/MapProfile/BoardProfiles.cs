@@ -4,9 +4,9 @@ using TicketService.Domain;
 
 namespace TicketService.Application.MapProfile;
 
-public class BoardProfile : Profile
+public class BoardProfiles : Profile
 {
-    public BoardProfile()
+    public BoardProfiles()
     {
         CreateMap<Board, GetBoardDto>();
         CreateMap<CreateBoardDto, Board>();

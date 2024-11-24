@@ -1,6 +1,5 @@
 namespace TicketService.Domain.Abstraction;
 
-public interface IBoardRepository
+public interface IBoardRepository : IBaseRepository<Board>
 {
-    
 }

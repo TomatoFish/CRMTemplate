@@ -1,6 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketService.Application", "TicketService.Application\TicketService.Application.csproj", "{E18A5FB9-5564-46C1-AB24-2CBCA0FAB598}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketService.Infrastructure", "TicketService.Infrastructure\TicketService.Infrastructure.csproj", "{264159F8-DCCA-4644-8760-2AB15221E807}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketService.Domain", "TicketService.Domain\TicketService.Domain.csproj", "{1F6B0AB4-2E03-4CD1-8F6E-54D04B917BE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketService.Api", "TicketService.Api\TicketService.Api.csproj", "{0912EBE7-4144-4091-8EB2-A7756E85345E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketService.Application", "TicketService.Application\TicketService.Application.csproj", "{026BB522-EBD2-419C-8E19-96BB880706A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0F232458-D158-4175-8152-B86E6F98F1D9}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +19,21 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E18A5FB9-5564-46C1-AB24-2CBCA0FAB598}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E18A5FB9-5564-46C1-AB24-2CBCA0FAB598}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E18A5FB9-5564-46C1-AB24-2CBCA0FAB598}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E18A5FB9-5564-46C1-AB24-2CBCA0FAB598}.Release|Any CPU.Build.0 = Release|Any CPU
+		{264159F8-DCCA-4644-8760-2AB15221E807}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{264159F8-DCCA-4644-8760-2AB15221E807}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{264159F8-DCCA-4644-8760-2AB15221E807}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{264159F8-DCCA-4644-8760-2AB15221E807}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F6B0AB4-2E03-4CD1-8F6E-54D04B917BE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F6B0AB4-2E03-4CD1-8F6E-54D04B917BE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F6B0AB4-2E03-4CD1-8F6E-54D04B917BE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F6B0AB4-2E03-4CD1-8F6E-54D04B917BE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0912EBE7-4144-4091-8EB2-A7756E85345E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0912EBE7-4144-4091-8EB2-A7756E85345E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0912EBE7-4144-4091-8EB2-A7756E85345E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0912EBE7-4144-4091-8EB2-A7756E85345E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{026BB522-EBD2-419C-8E19-96BB880706A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{026BB522-EBD2-419C-8E19-96BB880706A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{026BB522-EBD2-419C-8E19-96BB880706A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{026BB522-EBD2-419C-8E19-96BB880706A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
